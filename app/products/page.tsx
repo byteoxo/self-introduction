@@ -63,10 +63,11 @@ const products = [
       "Images & Videos",
       "Privacy-First",
     ],
-    link: "#",
+    link: "https://apps.apple.com/app",
     linkText: "Mac App Store",
     gradient: "from-blue-500 to-purple-500",
     category: "Desktop",
+    detailPage: "/products/macos/crunch",
   },
   {
     id: 3,
