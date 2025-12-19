@@ -16,6 +16,7 @@ import {
   Play,
   ArrowLeft,
   Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/navigation";
@@ -42,10 +43,11 @@ const products = [
       "Multi-Model Support",
       "Custom API Keys",
     ],
-    link: "#",
+    link: "https://play.google.com/store",
     linkText: "Play Store",
     gradient: "from-green-500 to-emerald-500",
     category: "Mobile",
+    detailPage: "/products/android/ai-hub",
   },
   {
     id: 2,
@@ -240,6 +242,7 @@ interface Product {
   gradient: string;
   installCommand?: string;
   category: string;
+  detailPage?: string;
 }
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
@@ -376,23 +379,38 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             )}
           </div>
 
-          {/* Link */}
-          <motion.a
-            href={product.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              "mt-auto inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-medium text-white",
-              "bg-gradient-to-r transition-all duration-300",
-              product.gradient,
-              "hover:shadow-lg hover:shadow-accent/20"
+          {/* Links */}
+          <div className="mt-auto flex gap-2">
+            {product.detailPage && (
+              <Link
+                href={product.detailPage}
+                className={cn(
+                  "flex-1 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 font-medium",
+                  "border border-card-border bg-card/50 transition-all duration-300",
+                  "hover:border-accent/50 hover:bg-card"
+                )}
+              >
+                <span>Learn More</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             )}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span>{product.linkText}</span>
-            <ExternalLink className="h-4 w-4" />
-          </motion.a>
+            <motion.a
+              href={product.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "flex-1 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 font-medium text-white",
+                "bg-gradient-to-r transition-all duration-300",
+                product.gradient,
+                "hover:shadow-lg hover:shadow-accent/20"
+              )}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span>{product.linkText}</span>
+              <ExternalLink className="h-4 w-4" />
+            </motion.a>
+          </div>
         </div>
       </motion.div>
     </motion.div>
