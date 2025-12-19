@@ -15,11 +15,14 @@ import {
   Apple,
   Terminal,
   ExternalLink,
+  Github,
+  Mail,
+  MessageCircle,
+  Heart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GridBackground, MouseFollower } from "@/components/background-effects";
 import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 
 // Featured products for the showcase section
 const featuredProducts = [
@@ -501,8 +504,85 @@ export default function NotFound() {
         </div>
       </main>
 
-      {/* Footer */}
-      <Footer />
+      {/* Simplified Footer for 404 Page */}
+      <footer className="relative border-t border-card-border bg-card/30 backdrop-blur-sm">
+        <div className="mx-auto max-w-6xl px-4 py-8">
+          <motion.div
+            className="flex flex-col items-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            {/* Logo */}
+            <Link href="/" className="group">
+              <span className="text-xl font-bold text-gradient">byteoxo</span>
+            </Link>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              <motion.a
+                href="https://github.com/byteoxo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-full",
+                  "border border-card-border bg-card/50 transition-all duration-300",
+                  "hover:border-accent/50 hover:bg-card hover:text-accent hover:shadow-lg hover:shadow-accent/10"
+                )}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="GitHub"
+              >
+                <Github className="h-5 w-5" />
+              </motion.a>
+              <motion.a
+                href="mailto:developer@byteoxo.io"
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-full",
+                  "border border-card-border bg-card/50 transition-all duration-300",
+                  "hover:border-accent/50 hover:bg-card hover:text-accent hover:shadow-lg hover:shadow-accent/10"
+                )}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Email"
+              >
+                <Mail className="h-5 w-5" />
+              </motion.a>
+              <motion.a
+                href="https://discord.gg/Bwp267Jq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "flex h-10 w-10 items-center justify-center rounded-full",
+                  "border border-card-border bg-card/50 transition-all duration-300",
+                  "hover:border-accent/50 hover:bg-card hover:text-accent hover:shadow-lg hover:shadow-accent/10"
+                )}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Discord"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </motion.a>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px w-full max-w-xs bg-gradient-to-r from-transparent via-card-border to-transparent" />
+
+            {/* Copyright */}
+            <p className="flex items-center gap-1 text-sm text-muted">
+              Built with{" "}
+              <Heart
+                className="inline-block h-4 w-4 text-red-500"
+                fill="currentColor"
+              />{" "}
+              by byteoxo
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Decorative gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+      </footer>
     </>
   );
 }
