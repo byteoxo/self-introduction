@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import {
   motion,
   useInView,
@@ -16,6 +17,7 @@ import {
   Terminal,
   Apple,
   Play,
+  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -34,8 +36,9 @@ const products = [
       "Multi-Model Support",
       "Custom API Keys",
     ],
-    link: "#",
-    linkText: "Play Store",
+    storeLink: "#",
+    storeLinkText: "Play Store",
+    learnMoreLink: "/products/android/ai-hub",
     gradient: "from-green-500 to-emerald-500",
   },
   {
@@ -52,8 +55,9 @@ const products = [
       "Images & Videos",
       "Privacy-First",
     ],
-    link: "#",
-    linkText: "Mac App Store",
+    storeLink: "#",
+    storeLinkText: "Mac App Store",
+    learnMoreLink: "/products/macos/crunch",
     gradient: "from-blue-500 to-purple-500",
   },
   {
@@ -70,8 +74,10 @@ const products = [
       "Cross-Platform",
       "Open Source",
     ],
-    link: "https://github.com/byteoxo/crunch",
-    linkText: "GitHub",
+    storeLink: "https://github.com/byteoxo/crunch",
+    storeLinkText: "GitHub",
+    learnMoreLink: "https://github.com/byteoxo/crunch",
+    learnMoreExternal: true,
     gradient: "from-orange-500 to-red-500",
     installCommand:
       "brew tap byteoxo/tools && brew install byteoxo/tools/crunch",
@@ -138,8 +144,10 @@ interface Product {
   tagline: string;
   description: string;
   features: string[];
-  link: string;
-  linkText: string;
+  storeLink: string;
+  storeLinkText: string;
+  learnMoreLink: string;
+  learnMoreExternal?: boolean;
   gradient: string;
   installCommand?: string;
 }
@@ -272,23 +280,64 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               </div>
             )}
 
-            {/* Link */}
-            <motion.a
-              href={product.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium text-white",
-                "bg-gradient-to-r transition-all duration-300",
-                product.gradient,
-                "hover:shadow-lg hover:shadow-accent/20"
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3">
+              {/* Store Link */}
+              <motion.a
+                href={product.storeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium text-white",
+                  "bg-gradient-to-r transition-all duration-300",
+                  product.gradient,
+                  "hover:shadow-lg hover:shadow-accent/20"
+                )}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>{product.storeLinkText}</span>
+                <ExternalLink className="h-4 w-4" />
+              </motion.a>
+
+              {/* Learn More Button */}
+              {product.learnMoreExternal ? (
+                <motion.a
+                  href={product.learnMoreLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium cursor-pointer",
+                    "border border-card-border bg-card/50 text-foreground",
+                    "transition-all duration-300",
+                    "hover:border-accent/50 hover:text-accent hover:shadow-lg hover:shadow-accent/10"
+                  )}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" />
+                </motion.a>
+              ) : (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    href={product.learnMoreLink}
+                    className={cn(
+                      "inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-medium cursor-pointer",
+                      "border border-card-border bg-card/50 text-foreground",
+                      "transition-all duration-300",
+                      "hover:border-accent/50 hover:text-accent hover:shadow-lg hover:shadow-accent/10"
+                    )}
+                  >
+                    <span>Learn More</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </motion.div>
               )}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>{product.linkText}</span>
-              <ExternalLink className="h-4 w-4" />
-            </motion.a>
+            </div>
           </div>
         </div>
       </motion.div>
