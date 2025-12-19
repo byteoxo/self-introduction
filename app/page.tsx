@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero";
 import { Skills } from "@/components/skills";
 import { Products } from "@/components/products";
 import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation";
 import {
   GridBackground,
   MouseFollower,
@@ -17,6 +18,9 @@ export default function Home() {
       <ParticlesEffect />
       <MouseFollower />
       <ScrollProgress />
+
+      {/* Navigation */}
+      <Navigation />
 
       {/* Main Content */}
       <main className="relative z-10">
