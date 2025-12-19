@@ -1,4 +1,22 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/hero";
+
+export const metadata: Metadata = {
+  title: "byteoxo | Full-Stack Developer & AI Enthusiast",
+  description:
+    "A passionate Full-Stack Developer exploring the intersection of software development and AI Technology. Building AI-powered apps and blazingly fast tools for mobile, desktop, and CLI.",
+  openGraph: {
+    title: "byteoxo | Full-Stack Developer & AI Enthusiast",
+    description:
+      "A passionate Full-Stack Developer exploring the intersection of software development and AI Technology. Building AI-powered apps and blazingly fast tools.",
+    url: "https://byteoxo.dev",
+  },
+  twitter: {
+    title: "byteoxo | Full-Stack Developer & AI Enthusiast",
+    description:
+      "A passionate Full-Stack Developer exploring the intersection of software development and AI Technology. Building AI-powered apps and blazingly fast tools.",
+  },
+};
 import { Skills } from "@/components/skills";
 import { Products } from "@/components/products";
 import { Footer } from "@/components/footer";
