@@ -14,6 +14,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AnimatedLogo } from "@/components/animated-logo";
 
 const navLinks = [
   { name: "Home", href: "/", icon: Home },
@@ -61,14 +62,14 @@ export function Navigation() {
         <nav className="mx-auto max-w-6xl px-4">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="group flex items-center gap-2">
-              <motion.span
-                className="text-xl font-bold text-gradient"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <Link href="/" className="group flex items-center">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2 }}
               >
-                byteoxo
-              </motion.span>
+                <AnimatedLogo size={28} showText={true} />
+              </motion.div>
             </Link>
 
             {/* Desktop Navigation */}
