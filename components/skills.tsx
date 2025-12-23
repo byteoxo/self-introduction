@@ -4,10 +4,27 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const skillCategories = [
+// Proficiency levels for visual indicators
+type ProficiencyLevel = "expert" | "advanced" | "intermediate" | "learning";
+
+interface Skill {
+  name: string;
+  proficiency?: ProficiencyLevel;
+  badge?: string; // For achievements like ratings
+}
+
+interface SkillCategory {
+  name: string;
+  color: string;
+  icon: string;
+  skills: (string | Skill)[];
+}
+
+const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
     color: "from-cyan-500 to-blue-500",
+    icon: "💻",
     skills: [
       "Rust",
       "C++",
@@ -23,23 +40,28 @@ const skillCategories = [
   {
     name: "Web",
     color: "from-purple-500 to-pink-500",
+    icon: "🌐",
     skills: [
-      "React",
+      "SolidJs",
+      "Gin",
+      "GORM",
+      "Lit-lit",
+      "Actix-web",
       "Next.js",
       "Bun",
-      "Express",
       "FastAPI",
-      "Flask",
       "TailwindCSS",
-      "WebGL",
-      "tRPC",
+      "WebGPU",
+      "gRPC",
     ],
   },
   {
     name: "Database",
     color: "from-green-500 to-emerald-500",
+    icon: "🗄️",
     skills: [
       "PostgreSQL",
+      "sqlite",
       "MySQL",
       "MongoDB",
       "Redis",
@@ -50,6 +72,7 @@ const skillCategories = [
   {
     name: "Tools",
     color: "from-orange-500 to-amber-500",
+    icon: "🛠️",
     skills: [
       "Docker",
       "Git",
@@ -60,9 +83,73 @@ const skillCategories = [
       "Zed",
       "Linux",
       "macOS",
+      "Cursor",
+    ],
+  },
+  {
+    name: "Systems Programming",
+    color: "from-red-500 to-rose-500",
+    icon: "⚙️",
+    skills: [
+      { name: "Cross-compilation", proficiency: "advanced" },
+      { name: "FFI (Foreign Function Interface)", proficiency: "advanced" },
+      { name: "Memory Management", proficiency: "expert" },
+      { name: "Unsafe Programming", proficiency: "advanced" },
+      { name: "SIMD/Vectorization", proficiency: "intermediate" },
+      { name: "WebAssembly", proficiency: "advanced" },
+      { name: "Custom Allocators", proficiency: "intermediate" },
+      { name: "Lock-free Data Structures", proficiency: "advanced" },
+      { name: "Concurrent Programming", proficiency: "expert" },
+      { name: "Kernel Modules", proficiency: "intermediate" },
+      { name: "Reverse Engineering", proficiency: "intermediate" },
+      { name: "Binary Analysis", proficiency: "intermediate" },
+      { name: "JIT Compilation", proficiency: "learning" },
+    ],
+  },
+  {
+    name: "Competitive Programming",
+    color: "from-yellow-500 to-orange-500",
+    icon: "🏆",
+    skills: [
+      { name: "Codeforces", proficiency: "advanced", badge: "Expert" },
+      { name: "ICPC", proficiency: "advanced", badge: "Regional" },
+      { name: "AtCoder", proficiency: "intermediate", badge: "Cyan" },
+      // { name: "LeetCode", proficiency: "expert", badge: "Top 5%" },
+      // { name: "Google Code Jam", proficiency: "intermediate" },
+      { name: "Kick Start", proficiency: "intermediate" },
+      // { name: "TopCoder SRM", proficiency: "intermediate" },
+    ],
+  },
+  {
+    name: "Algorithm Specializations",
+    color: "from-indigo-500 to-violet-500",
+    icon: "🧮",
+    skills: [
+      { name: "Network Flow", proficiency: "advanced" },
+      { name: "Heavy-Light Decomposition", proficiency: "intermediate" },
+      { name: "Computational Geometry", proficiency: "intermediate" },
+      { name: "Suffix Arrays", proficiency: "advanced" },
+      { name: "Aho-Corasick", proficiency: "advanced" },
+      { name: "DP Optimization", proficiency: "expert" },
+      { name: "Convex Hull Trick", proficiency: "intermediate" },
+      { name: "Number Theory", proficiency: "advanced" },
+      { name: "Cryptographic Algorithms", proficiency: "intermediate" },
+      { name: "Segment Trees", proficiency: "expert" },
+      { name: "Fenwick Trees", proficiency: "expert" },
     ],
   },
 ];
+
+// Proficiency level colors and labels
+const proficiencyConfig: Record<
+  ProficiencyLevel,
+  { color: string; label: string; dots: number }
+> = {
+  expert: { color: "bg-green-500", label: "Expert", dots: 4 },
+  advanced: { color: "bg-blue-500", label: "Advanced", dots: 3 },
+  intermediate: { color: "bg-yellow-500", label: "Intermediate", dots: 2 },
+  learning: { color: "bg-gray-400", label: "Learning", dots: 1 },
+};
 
 export function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -114,7 +201,7 @@ export function Skills() {
 
         {/* Skills Grid */}
         <motion.div
-          className="grid gap-8 md:grid-cols-2"
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-2"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -123,10 +210,18 @@ export function Skills() {
             <motion.div
               key={category.name}
               variants={categoryVariants}
-              className="group rounded-2xl border border-card-border bg-card/30 p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card/50"
+              className={cn(
+                "group rounded-2xl border border-card-border bg-card/30 p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card/50",
+                // Make advanced categories span full width on larger screens
+                (category.name === "Systems Programming" ||
+                  category.name === "Competitive Programming" ||
+                  category.name === "Algorithm Specializations") &&
+                  "md:col-span-2 lg:col-span-1"
+              )}
             >
               {/* Category Header */}
               <div className="mb-4 flex items-center gap-3">
+                <span className="text-2xl">{category.icon}</span>
                 <div
                   className={cn(
                     "h-3 w-3 rounded-full bg-gradient-to-r",
@@ -138,16 +233,51 @@ export function Skills() {
 
               {/* Skills Tags */}
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, index) => (
-                  <SkillTag
-                    key={skill}
-                    skill={skill}
-                    color={category.color}
-                    delay={index * 0.05}
+                {category.skills.map((skill, index) => {
+                  const skillData =
+                    typeof skill === "string" ? { name: skill } : skill;
+                  return (
+                    <SkillTag
+                      key={skillData.name}
+                      skill={skillData}
+                      color={category.color}
+                      delay={index * 0.05}
+                    />
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Proficiency Legend */}
+        <motion.div
+          className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-muted"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        >
+          <span className="font-medium">Proficiency Levels:</span>
+          {(
+            Object.entries(proficiencyConfig) as [
+              ProficiencyLevel,
+              (typeof proficiencyConfig)[ProficiencyLevel]
+            ][]
+          ).map(([level, config]) => (
+            <div key={level} className="flex items-center gap-2">
+              <div className="flex gap-0.5">
+                {["dot-1", "dot-2", "dot-3", "dot-4"].map((dotId, i) => (
+                  <div
+                    key={`${level}-${dotId}`}
+                    className={cn(
+                      "h-2 w-2 rounded-full",
+                      i < config.dots ? config.color : "bg-gray-700"
+                    )}
                   />
                 ))}
               </div>
-            </motion.div>
+              <span>{config.label}</span>
+            </div>
           ))}
         </motion.div>
       </div>
@@ -160,16 +290,20 @@ function SkillTag({
   color,
   delay,
 }: {
-  skill: string;
+  skill: Skill;
   color: string;
   delay: number;
 }) {
+  const { name, proficiency, badge } = skill;
+  const config = proficiency ? proficiencyConfig[proficiency] : null;
+
   return (
     <motion.span
       className={cn(
         "relative overflow-hidden rounded-full px-4 py-2 text-sm font-medium",
         "border border-card-border bg-background/50 transition-all duration-300",
-        "hover:border-transparent hover:shadow-lg"
+        "hover:border-transparent hover:shadow-lg",
+        "flex items-center gap-2"
       )}
       whileHover={{ scale: 1.05, y: -2 }}
       initial={{ opacity: 0, scale: 0.8 }}
@@ -184,7 +318,36 @@ function SkillTag({
           "group-hover:opacity-10"
         )}
       />
-      <span className="relative z-10">{skill}</span>
+      <span className="relative z-10 flex items-center gap-2">
+        {name}
+        {/* Proficiency dots */}
+        {config && (
+          <span className="flex gap-0.5" title={config.label}>
+            {["d1", "d2", "d3", "d4"].map((dotId, i) => (
+              <span
+                key={`${name}-${dotId}`}
+                className={cn(
+                  "h-1.5 w-1.5 rounded-full",
+                  i < config.dots ? config.color : "bg-gray-600"
+                )}
+              />
+            ))}
+          </span>
+        )}
+        {/* Badge for achievements */}
+        {badge && (
+          <span
+            className={cn(
+              "ml-1 rounded-md px-1.5 py-0.5 text-xs font-bold",
+              "bg-gradient-to-r",
+              color,
+              "text-white"
+            )}
+          >
+            {badge}
+          </span>
+        )}
+      </span>
     </motion.span>
   );
 }
