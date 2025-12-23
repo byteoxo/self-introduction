@@ -26,9 +26,9 @@ const skillCategories: SkillCategory[] = [
     color: "from-cyan-500 to-blue-500",
     icon: "💻",
     skills: [
-      "Rust",
       "C++",
       "Go",
+      "Rust",
       "TypeScript",
       "Python",
       "Swift",
