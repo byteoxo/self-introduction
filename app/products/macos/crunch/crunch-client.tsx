@@ -145,7 +145,7 @@ const pricingPlans = [
     priceYearly: "$30 / year",
     savePercent: "17",
     features: [
-      { text: "100 files per month", included: true, highlight: true },
+      { text: "6 files per day", included: true, highlight: true },
       { text: "Supports all image / video / audio formats", included: true },
       {
         text: "File size limits: Images 20MB | Videos 200MB | Audio 5MB",
