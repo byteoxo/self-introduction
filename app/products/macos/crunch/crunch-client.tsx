@@ -32,6 +32,8 @@ import {
   Minimize2,
   Maximize2,
   Circle,
+  Users,
+  Crown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Navigation } from "@/components/navigation";
@@ -113,6 +115,89 @@ const supportedFormats = {
   video: ["MP4", "WebM", "MOV", "H.265"],
   audio: ["MP3", "AAC", "WAV", "FLAC"],
 };
+
+// Pricing plans
+const pricingPlans = [
+  {
+    name: "Free",
+    subtitle: "Try It Out",
+    description: "Perfect for occasional compression needs",
+    price: "Free",
+    priceYearly: null,
+    savePercent: null,
+    features: [
+      { text: "10 files per month", included: true, highlight: true },
+      { text: "Supports all image / video / audio formats", included: true },
+      {
+        text: "File size limits: Images 8MB | Videos 80MB | Audio 2.5MB",
+        included: true,
+      },
+      { text: "No batch processing", included: false },
+    ],
+    gradient: "from-gray-500 to-gray-600",
+    recommended: false,
+  },
+  {
+    name: "Plus",
+    subtitle: "Personal",
+    description: "Ideal for individuals with regular compression needs",
+    price: "$3 / month",
+    priceYearly: "$30 / year",
+    savePercent: "17",
+    features: [
+      { text: "100 files per month", included: true, highlight: true },
+      { text: "Supports all image / video / audio formats", included: true },
+      {
+        text: "File size limits: Images 20MB | Videos 200MB | Audio 5MB",
+        included: true,
+      },
+      { text: "No batch processing", included: false },
+    ],
+    gradient: "from-blue-500 to-cyan-500",
+    recommended: false,
+  },
+  {
+    name: "Pro",
+    subtitle: "Professional",
+    description: "Built for creators, designers, and power users",
+    price: "$6.99 / month",
+    priceYearly: "$55 / year",
+    savePercent: "35",
+    features: [
+      { text: "Unlimited files", included: true, highlight: true },
+      { text: "Unlimited file size", included: true, highlight: true },
+      { text: "Supports all image / video / audio formats", included: true },
+      {
+        text: "Batch processing for multiple files",
+        included: true,
+        highlight: true,
+      },
+      { text: "Priority customer support", included: true, highlight: true },
+    ],
+    gradient: "from-purple-500 to-pink-500",
+    recommended: true,
+  },
+  {
+    name: "Team",
+    subtitle: "Collaborate",
+    description: "Designed for studios, agencies, and growing teams",
+    price: "$6 / seat / month",
+    priceYearly: "$50 / seat / year",
+    savePercent: "40",
+    comingSoon: true,
+    features: [
+      { text: "Everything in Pro", included: true },
+      {
+        text: "5+ seats with flexible member management",
+        included: true,
+        highlight: true,
+      },
+      { text: "Dedicated account manager", included: true, highlight: true },
+    ],
+    gradient: "from-orange-500 to-red-500",
+    recommended: false,
+  },
+];
 
 export function CrunchPageClient() {
   const heroRef = useRef<HTMLElement>(null);
@@ -546,6 +631,32 @@ export function CrunchPageClient() {
               >
                 <DesktopMockup screen="results" />
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" className="px-4 py-20 md:py-28 bg-card/30">
+          <div className="mx-auto max-w-7xl">
+            <motion.div
+              className="mb-16 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                <span className="text-gradient">Choose Your Plan</span>
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-muted">
+                Start free and upgrade as your needs grow
+              </p>
+            </motion.div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {pricingPlans.map((plan, index) => (
+                <PricingCard key={plan.name} plan={plan} index={index} />
+              ))}
             </div>
           </div>
         </section>
@@ -1253,6 +1364,126 @@ function FeatureCard({
             </span>
           ))}
         </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// Pricing Card Component
+function PricingCard({
+  plan,
+  index,
+}: {
+  plan: (typeof pricingPlans)[0];
+  index: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(cardRef, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={cardRef}
+      className={cn(
+        "relative rounded-2xl border bg-card/50 p-6 backdrop-blur-sm transition-all",
+        plan.recommended
+          ? "border-purple-500/50 shadow-lg shadow-purple-500/10"
+          : "border-card-border hover:border-accent/30"
+      )}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      {/* Recommended badge */}
+      {plan.recommended && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-3 py-1 text-xs font-semibold text-white">
+            <Star className="h-3 w-3" fill="currentColor" />
+            Recommended
+          </span>
+        </div>
+      )}
+
+      {/* Coming Soon badge */}
+      {"comingSoon" in plan && plan.comingSoon && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-3 py-1 text-xs font-semibold text-white">
+            Coming Soon
+          </span>
+        </div>
+      )}
+
+      {/* Header */}
+      <div className="mb-6 pt-2">
+        <div className="flex items-center gap-2 mb-1">
+          <h3 className="text-xl font-bold">{plan.name}</h3>
+          <span className="text-muted">·</span>
+          <span className="text-sm text-muted">{plan.subtitle}</span>
+        </div>
+        <p className="text-sm text-muted">{plan.description}</p>
+      </div>
+
+      {/* Price */}
+      <div className="mb-6">
+        <div className="text-2xl font-bold">{plan.price}</div>
+        {plan.priceYearly && (
+          <div className="mt-1 flex items-center gap-2">
+            <span className="text-sm text-muted">or {plan.priceYearly}</span>
+            {plan.savePercent && (
+              <span className="rounded-full bg-green-500/20 px-2 py-0.5 text-xs font-medium text-green-400">
+                Save {plan.savePercent}%
+              </span>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Features */}
+      <div className="space-y-3">
+        {plan.features.map((feature) => (
+          <div key={feature.text} className="flex items-start gap-2">
+            {feature.included ? (
+              <Check className="h-4 w-4 mt-0.5 flex-shrink-0 text-green-400" />
+            ) : (
+              <X className="h-4 w-4 mt-0.5 flex-shrink-0 text-muted" />
+            )}
+            <span
+              className={cn(
+                "text-sm",
+                feature.included ? "text-foreground" : "text-muted",
+                feature.highlight && feature.included && "font-medium"
+              )}
+            >
+              {feature.text}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA Button */}
+      <div className="mt-6">
+        {"comingSoon" in plan && plan.comingSoon ? (
+          <button
+            type="button"
+            disabled
+            className="w-full rounded-full border border-card-border bg-card/50 px-4 py-2.5 text-sm font-medium text-muted cursor-not-allowed"
+          >
+            Coming Soon
+          </button>
+        ) : (
+          <motion.button
+            type="button"
+            className={cn(
+              "w-full rounded-full px-4 py-2.5 text-sm font-medium transition-all",
+              plan.recommended
+                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/25"
+                : "border border-card-border bg-card/50 hover:border-accent/50 hover:bg-card"
+            )}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            {plan.price === "Free" ? "Get Started" : "Subscribe"}
+          </motion.button>
+        )}
       </div>
     </motion.div>
   );
