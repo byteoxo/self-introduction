@@ -116,7 +116,7 @@ const skillCategories: SkillCategory[] = [
       { name: "AtCoder", proficiency: "intermediate", badge: "Cyan" },
       // { name: "LeetCode", proficiency: "expert", badge: "Top 5%" },
       // { name: "Google Code Jam", proficiency: "intermediate" },
-      { name: "Kick Start", proficiency: "intermediate" },
+      // { name: "Kick Start", proficiency: "intermediate" },
       // { name: "TopCoder SRM", proficiency: "intermediate" },
     ],
   },
