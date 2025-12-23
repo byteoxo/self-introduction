@@ -79,8 +79,7 @@ const products = [
     learnMoreLink: "https://github.com/byteoxo/crunch",
     learnMoreExternal: true,
     gradient: "from-orange-500 to-red-500",
-    installCommand:
-      "brew tap byteoxo/tools && brew install byteoxo/tools/crunch",
+    installCommand: "brew install byteoxo/tap/crunch",
   },
 ];
 
