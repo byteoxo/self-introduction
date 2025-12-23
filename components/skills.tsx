@@ -107,6 +107,23 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    name: "Game Backend",
+    color: "from-fuchsia-500 to-purple-600",
+    icon: "🎮",
+    skills: [
+      { name: "Real-time Replication", proficiency: "advanced" },
+      { name: "Lockstep / Determinism", proficiency: "intermediate" },
+      { name: "Lag Compensation", proficiency: "advanced" },
+      { name: "Spatial Hashing / Quadtrees", proficiency: "expert" },
+      { name: "NavMesh / Pathfinding", proficiency: "intermediate" },
+      { name: "KCP / ENet / QUIC", proficiency: "advanced" },
+      { name: "FlatBuffers / Cap'n Proto", proficiency: "advanced" },
+      { name: "ECS Architecture", proficiency: "expert" },
+      { name: "Agones / GameLift", proficiency: "intermediate" },
+      { name: "Actor Model", proficiency: "advanced" },
+    ],
+  },
+  {
     name: "Competitive Programming",
     color: "from-yellow-500 to-orange-500",
     icon: "🏆",
@@ -214,6 +231,7 @@ export function Skills() {
                 "group rounded-2xl border border-card-border bg-card/30 p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card/50",
                 // Make advanced categories span full width on larger screens
                 (category.name === "Systems Programming" ||
+                  category.name === "Game Backend" ||
                   category.name === "Competitive Programming" ||
                   category.name === "Algorithm Specializations") &&
                   "md:col-span-2 lg:col-span-1"
