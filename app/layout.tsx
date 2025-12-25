@@ -1,84 +1,84 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
+import './globals.css'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+    variable: '--font-geist-sans',
+    subsets: ['latin'],
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+    variable: '--font-geist-mono',
+    subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: "byteoxo | Full-Stack Developer",
-  description:
-    "A passionate Full-Stack Developer exploring the intersection of software development and AI Technology. Building AI-powered apps and blazingly fast tools.",
-  keywords: [
-    "byteoxo",
-    "Full-Stack Developer",
-    "Software Developer",
-    "AI Technology",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Rust",
-    "Go",
-    "Python",
-  ],
-  authors: [{ name: "byteoxo" }],
-  creator: "byteoxo",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://byteoxo.dev",
-    title: "byteoxo | Full-Stack Developer",
+    title: 'byteoxo | Full-Stack Developer',
     description:
-      "A passionate Full-Stack Developer exploring the intersection of software development and AI Technology.",
-    siteName: "byteoxo",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "byteoxo | Full-Stack Developer",
-    description:
-      "A passionate Full-Stack Developer exploring the intersection of software development and AI Technology.",
-    creator: "@byteoxo",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+        'A passionate Full-Stack Developer exploring the intersection of software development and AI Technology. Building AI-powered apps and blazingly fast tools.',
+    keywords: [
+        'byteoxo',
+        'Full-Stack Developer',
+        'Software Developer',
+        'AI Technology',
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Rust',
+        'Go',
+        'Python',
+    ],
+    authors: [{ name: 'byteoxo' }],
+    creator: 'byteoxo',
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://byteoxo.dev',
+        title: 'byteoxo | Full-Stack Developer',
+        description:
+            'A passionate Full-Stack Developer exploring the intersection of software development and AI Technology.',
+        siteName: 'byteoxo',
     },
-  },
-};
+    twitter: {
+        card: 'summary_large_image',
+        title: 'byteoxo | Full-Stack Developer',
+        description:
+            'A passionate Full-Stack Developer exploring the intersection of software development and AI Technology.',
+        creator: '@byteoxo',
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    enableSystem={false}
+                    disableTransitionOnChange
+                >
+                    {children}
+                </ThemeProvider>
+            </body>
+        </html>
+    )
 }
