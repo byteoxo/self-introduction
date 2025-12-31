@@ -2,16 +2,10 @@
 
 import { useRef, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useInView } from 'motion/react'
 import * as ScrollArea from '@radix-ui/react-scroll-area'
-import {
-    ExternalLink,
-    Terminal,
-    Apple,
-    Play,
-    ArrowRight,
-    Sparkles,
-} from 'lucide-react'
+import { ExternalLink, Terminal, ArrowRight, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const products = [
@@ -19,7 +13,7 @@ const products = [
         id: 1,
         name: 'AI Hub',
         platform: 'Android',
-        platformIcon: Play,
+        logo: '/products/android/ai-hub/AI-Hub.png',
         tagline: 'ChatGPT-like AI chat app',
         description:
             'Bring your own API key, connect to various LLMs via OpenRouter. Your key, your models, your privacy.',
@@ -42,7 +36,7 @@ const products = [
         id: 2,
         name: 'Crunch',
         platform: 'macOS',
-        platformIcon: Apple,
+        logo: '/products/macos/crunch/crunch.png',
         tagline: 'Native media compression tool',
         description:
             'Compress images, videos, and audio locally. Apple Silicon optimized, privacy-first, no uploads needed.',
@@ -65,7 +59,7 @@ const products = [
         id: 3,
         name: 'Crunch CLI',
         platform: 'Cross-Platform',
-        platformIcon: Terminal,
+        icon: Terminal,
         tagline: 'Blazingly fast parallel media compression',
         description:
             'Process entire directories with one command. Available on Windows, Linux, and macOS.',
@@ -149,7 +143,8 @@ interface Product {
     id: number
     name: string
     platform: string
-    platformIcon: React.ComponentType<{ className?: string }>
+    logo?: string
+    icon?: React.ComponentType<{ className?: string }>
     tagline: string
     description: string
     features: string[]
@@ -167,7 +162,7 @@ interface Product {
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
     const [isHovered, setIsHovered] = useState(false)
-    const PlatformIcon = product.platformIcon
+    const Icon = product.icon
 
     return (
         <motion.div
@@ -208,12 +203,13 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
                 {/* Main content container - high z-index to ensure clickability */}
                 <div className="relative z-20 flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
-                    {/* Icon & Platform with floating animation */}
+                    {/* Logo/Icon & Platform with floating animation */}
                     <div className="flex-shrink-0">
                         <motion.div
                             className={cn(
-                                'relative flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br shadow-lg',
-                                product.gradient
+                                'relative flex h-16 w-16 items-center justify-center rounded-xl shadow-lg overflow-hidden',
+                                !product.logo && 'bg-gradient-to-br',
+                                !product.logo && product.gradient
                             )}
                             animate={
                                 isHovered
@@ -229,7 +225,17 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                                 ease: 'easeInOut',
                             }}
                         >
-                            <PlatformIcon className="h-8 w-8 text-white" />
+                            {product.logo ? (
+                                <Image
+                                    src={product.logo}
+                                    alt={`${product.name} logo`}
+                                    width={64}
+                                    height={64}
+                                    className="h-full w-full object-cover"
+                                />
+                            ) : (
+                                Icon && <Icon className="h-8 w-8 text-white" />
+                            )}
                             {/* Sparkle effect on hover */}
                             {isHovered && (
                                 <motion.div
