@@ -277,15 +277,6 @@ export function Footer() {
                             >
                                 Contact
                             </a>
-                            <span>•</span>
-                            <a
-                                href="https://github.com/byteoxo"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="transition-colors hover:text-accent"
-                            >
-                                Source Code
-                            </a>
                         </div>
                     </motion.div>
                 </motion.div>
