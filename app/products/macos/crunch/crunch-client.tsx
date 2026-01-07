@@ -34,6 +34,7 @@ import {
     Circle,
     Users,
     Crown,
+    RefreshCw,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Navigation } from '@/components/navigation'
@@ -824,6 +825,13 @@ export function CrunchPageClient() {
                                 >
                                     <Shield className="h-4 w-4" />
                                     <span>Privacy Policy</span>
+                                </Link>
+                                <Link
+                                    href="/products/macos/crunch/return-policy"
+                                    className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-5 py-2.5 text-sm font-medium transition-all hover:border-accent/50 hover:bg-card"
+                                >
+                                    <RefreshCw className="h-4 w-4" />
+                                    <span>Return Policy</span>
                                 </Link>
                             </div>
                             <p className="text-xs text-muted text-center max-w-md">
