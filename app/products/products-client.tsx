@@ -44,9 +44,9 @@ const products = [
     },
     {
         id: 2,
-        name: 'Crunch',
+        name: 'Shrinkr',
         platform: 'macOS',
-        logo: '/products/macos/crunch/crunch.png',
+        logo: '/products/macos/shrinkr/shrinkr.png',
         tagline: 'Native media compression tool',
         description:
             'Compress images, videos, and audio locally. Apple Silicon optimized, privacy-first, no uploads needed.',
@@ -60,7 +60,7 @@ const products = [
         linkText: 'Mac App Store',
         gradient: 'from-blue-500 to-purple-500',
         category: 'Desktop',
-        detailPage: '/products/macos/crunch',
+        detailPage: '/products/macos/shrinkr',
     },
     {
         id: 3,
@@ -76,10 +76,10 @@ const products = [
             'Cross-Platform',
             'Open Source',
         ],
-        link: 'https://github.com/byteoxo/crunch',
+        link: 'https://github.com/byteoxo/shrinkr',
         linkText: 'GitHub',
         gradient: 'from-orange-500 to-red-500',
-        installCommand: 'brew install byteoxo/tap/crunch',
+        installCommand: 'brew install byteoxo/tap/shrinkr',
         category: 'CLI',
     },
 ]

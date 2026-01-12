@@ -221,7 +221,7 @@ const pricingPlans = [
     },
 ]
 
-export function CrunchPageClient() {
+export function ShrinkrPageClient() {
     const heroRef = useRef<HTMLElement>(null)
     const isHeroInView = useInView(heroRef, { once: true })
 
@@ -282,7 +282,7 @@ export function CrunchPageClient() {
 
                                 <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
                                     <span className="text-gradient">
-                                        Crunch
+                                        Shrinkr
                                     </span>
                                 </h1>
 
@@ -556,7 +556,7 @@ export function CrunchPageClient() {
                                     step: '1',
                                     title: 'Select Files',
                                     description:
-                                        'Choose a folder and Crunch will recursively find all media files. Select individually or batch select by type.',
+                                        'Choose a folder and Shrinkr will recursively find all media files. Select individually or batch select by type.',
                                     icon: FolderOpen,
                                     gradient: 'from-blue-500 to-cyan-500',
                                 },
@@ -616,7 +616,7 @@ export function CrunchPageClient() {
                     </div>
                 </section>
 
-                {/* Why Crunch Section */}
+                {/* Why Shrinkr Section */}
                 <section className="px-4 py-20 md:py-28">
                     <div className="mx-auto max-w-6xl">
                         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -629,7 +629,7 @@ export function CrunchPageClient() {
                                 <h2 className="mb-6 text-3xl font-bold md:text-4xl">
                                     Why{' '}
                                     <span className="text-gradient">
-                                        Crunch
+                                        Shrinkr
                                     </span>
                                     ?
                                 </h2>
@@ -763,7 +763,7 @@ export function CrunchPageClient() {
                                     Ready to Shrink Your Media?
                                 </h2>
                                 <p className="mx-auto mb-8 max-w-xl text-lg text-muted">
-                                    Download Crunch today and reclaim your disk
+                                    Download Shrinkr today and reclaim your disk
                                     space. Compress images, videos, and audio
                                     without compromising quality.
                                 </p>
@@ -813,21 +813,21 @@ export function CrunchPageClient() {
                             </p>
                             <div className="flex flex-wrap items-center justify-center gap-4">
                                 <Link
-                                    href="/products/macos/crunch/terms-of-service"
+                                    href="/products/macos/shrinkr/terms-of-service"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-5 py-2.5 text-sm font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <FileText className="h-4 w-4" />
                                     <span>Terms of Service</span>
                                 </Link>
                                 <Link
-                                    href="/products/macos/crunch/privacy-policy"
+                                    href="/products/macos/shrinkr/privacy-policy"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-5 py-2.5 text-sm font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <Shield className="h-4 w-4" />
                                     <span>Privacy Policy</span>
                                 </Link>
                                 <Link
-                                    href="/products/macos/crunch/return-policy"
+                                    href="/products/macos/shrinkr/return-policy"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-5 py-2.5 text-sm font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <RefreshCw className="h-4 w-4" />
@@ -835,7 +835,7 @@ export function CrunchPageClient() {
                                 </Link>
                             </div>
                             <p className="text-xs text-muted text-center max-w-md">
-                                By downloading and using Crunch, you agree to
+                                By downloading and using Shrinkr, you agree to
                                 our Terms of Service and Privacy Policy.
                             </p>
                         </motion.div>
@@ -863,7 +863,7 @@ function DesktopMockup({ screen }: { screen: string }) {
                         <div className="h-3 w-3 rounded-full bg-green-500" />
                     </div>
                     <div className="flex-1 text-center">
-                        <span className="text-xs text-gray-400">Crunch</span>
+                        <span className="text-xs text-gray-400">Shrinkr</span>
                     </div>
                     <div className="w-12" />
                 </div>
@@ -1356,7 +1356,7 @@ function ScreenshotsCarousel() {
                         <span className="text-gradient">App Screenshots</span>
                     </h2>
                     <p className="mx-auto max-w-2xl text-lg text-muted">
-                        See Crunch&apos;s clean and intuitive interface in
+                        See Shrinkr&apos;s clean and intuitive interface in
                         action
                     </p>
                 </motion.div>

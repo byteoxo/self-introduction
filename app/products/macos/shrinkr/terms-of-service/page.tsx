@@ -45,11 +45,11 @@ export default function TermsOfServicePage() {
                             className="mb-8"
                         >
                             <Link
-                                href="/products/macos/crunch"
+                                href="/products/macos/Shrinkr"
                                 className="inline-flex items-center gap-2 text-muted transition-colors hover:text-foreground"
                             >
                                 <ArrowLeft className="h-4 w-4" />
-                                <span>Back to Crunch</span>
+                                <span>Back to Shrinkr</span>
                             </Link>
                         </motion.div>
 
@@ -72,7 +72,7 @@ export default function TermsOfServicePage() {
                             <div className="flex items-center gap-3">
                                 <div className="flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-sm text-blue-400">
                                     <Apple className="h-4 w-4" />
-                                    <span>Crunch for macOS</span>
+                                    <span>Shrinkr for macOS</span>
                                 </div>
                                 <p className="text-muted">
                                     Last updated: {lastUpdated}
@@ -90,11 +90,11 @@ export default function TermsOfServicePage() {
                             {/* Introduction */}
                             <section className="mb-12 rounded-2xl border border-card-border bg-card/30 p-6 md:p-8">
                                 <p className="text-muted leading-relaxed">
-                                    Welcome to Crunch (&quot;the App&quot;), a
+                                    Welcome to Shrinkr (&quot;the App&quot;), a
                                     media compression application for macOS
                                     developed by byteoxo (&quot;we,&quot;
                                     &quot;us,&quot; or &quot;our&quot;). By
-                                    downloading, installing, or using Crunch,
+                                    downloading, installing, or using Shrinkr,
                                     you agree to be bound by these Terms of
                                     Service (&quot;Terms&quot;). If you do not
                                     agree to these Terms, please do not use the
@@ -109,10 +109,10 @@ export default function TermsOfServicePage() {
                                 gradient="from-blue-500 to-purple-500"
                             >
                                 <h3 className="text-lg font-semibold mb-3">
-                                    1.1 About Crunch
+                                    1.1 About Shrinkr
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    Crunch is a native macOS application that
+                                    Shrinkr is a native macOS application that
                                     compresses media files (images, videos, and
                                     audio) locally on your device. The App uses
                                     ffmpeg and other compression libraries to
@@ -172,9 +172,9 @@ export default function TermsOfServicePage() {
                                     Subject to your compliance with these Terms,
                                     we grant you a limited, non-exclusive,
                                     non-transferable, revocable license to
-                                    download, install, and use Crunch on any Mac
-                                    computer that you own or control, solely for
-                                    your personal, non-commercial purposes.
+                                    download, install, and use Shrinkr on any
+                                    Mac computer that you own or control, solely
+                                    for your personal, non-commercial purposes.
                                 </p>
 
                                 <h3 className="text-lg font-semibold mb-3">
@@ -208,12 +208,12 @@ export default function TermsOfServicePage() {
                                     2.3 Third-Party Components
                                 </h3>
                                 <p className="text-muted">
-                                    Crunch incorporates open-source components
+                                    Shrinkr incorporates open-source components
                                     including ffmpeg, which are subject to their
                                     own license terms. A list of third-party
                                     components and their licenses is available
-                                    within the App under &quot;About Crunch &gt;
-                                    Acknowledgments.&quot;
+                                    within the App under &quot;About Shrinkr
+                                    &gt; Acknowledgments.&quot;
                                 </p>
                             </Section>
 
@@ -227,7 +227,7 @@ export default function TermsOfServicePage() {
                                     3.1 Permitted Use
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    You may use Crunch to compress media files
+                                    You may use Shrinkr to compress media files
                                     that you own or have the right to modify.
                                     Common use cases include:
                                 </p>
@@ -251,7 +251,7 @@ export default function TermsOfServicePage() {
                                     3.2 Prohibited Use
                                 </h3>
                                 <p className="text-muted mb-3">
-                                    You agree NOT to use Crunch to:
+                                    You agree NOT to use Shrinkr to:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-4">
                                     <li>
@@ -297,7 +297,7 @@ export default function TermsOfServicePage() {
                                     4.1 Our Rights
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    Crunch, including its code, design, user
+                                    Shrinkr, including its code, design, user
                                     interface, and documentation, is owned by
                                     byteoxo and protected by copyright,
                                     trademark, and other intellectual property
@@ -337,7 +337,7 @@ export default function TermsOfServicePage() {
                                     5.1 As-Is Provision
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    CRUNCH IS PROVIDED &quot;AS IS&quot; AND
+                                    Shrinkr IS PROVIDED &quot;AS IS&quot; AND
                                     &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES
                                     OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
                                     BUT NOT LIMITED TO WARRANTIES OF
@@ -396,8 +396,8 @@ export default function TermsOfServicePage() {
                                 </h3>
                                 <p className="text-muted">
                                     Our total liability for any claims arising
-                                    from your use of Crunch shall not exceed the
-                                    amount you paid to purchase the App.
+                                    from your use of Shrinkr shall not exceed
+                                    the amount you paid to purchase the App.
                                 </p>
                             </Section>
 
@@ -411,7 +411,7 @@ export default function TermsOfServicePage() {
                                     6.1 Backup Your Files
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    While Crunch is designed to preserve your
+                                    While Shrinkr is designed to preserve your
                                     original files, we strongly recommend
                                     maintaining backups of any important media
                                     before compression. Unexpected errors, power
@@ -473,7 +473,7 @@ export default function TermsOfServicePage() {
                                     7.3 App Store Terms
                                 </h3>
                                 <p className="text-muted">
-                                    If you downloaded Crunch from the Mac App
+                                    If you downloaded Shrinkr from the Mac App
                                     Store, your use of the App is also subject
                                     to Apple&apos;s Terms and Conditions and the
                                     Licensed Application End User License
@@ -493,7 +493,7 @@ export default function TermsOfServicePage() {
                                 <p className="text-muted mb-4">
                                     These Terms, together with our Privacy
                                     Policy, constitute the entire agreement
-                                    between you and byteoxo regarding Crunch.
+                                    between you and byteoxo regarding Shrinkr.
                                 </p>
 
                                 <h3 className="text-lg font-semibold mb-3">
@@ -503,7 +503,7 @@ export default function TermsOfServicePage() {
                                     We reserve the right to modify these Terms
                                     at any time. Changes will be posted within
                                     the App or on our website. Your continued
-                                    use of Crunch after changes take effect
+                                    use of Shrinkr after changes take effect
                                     constitutes acceptance.
                                 </p>
 
@@ -555,10 +555,10 @@ export default function TermsOfServicePage() {
                                             <li>
                                                 <strong>Support:</strong>{' '}
                                                 <a
-                                                    href="mailto:crunch@byteoxo.io"
+                                                    href="mailto:Shrinkr@byteoxo.io"
                                                     className="text-accent hover:underline"
                                                 >
-                                                    crunch@byteoxo.io
+                                                    Shrinkr@byteoxo.io
                                                 </a>
                                             </li>
                                         </ul>
@@ -569,18 +569,18 @@ export default function TermsOfServicePage() {
                             {/* Navigation Links */}
                             <div className="mt-12 flex flex-wrap gap-4">
                                 <Link
-                                    href="/products/macos/crunch/privacy-policy"
+                                    href="/products/macos/Shrinkr/privacy-policy"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-6 py-3 font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <Shield className="h-4 w-4" />
                                     <span>Privacy Policy</span>
                                 </Link>
                                 <Link
-                                    href="/products/macos/crunch"
+                                    href="/products/macos/Shrinkr"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-6 py-3 font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <ArrowLeft className="h-4 w-4" />
-                                    <span>Back to Crunch</span>
+                                    <span>Back to Shrinkr</span>
                                 </Link>
                             </div>
                         </motion.div>

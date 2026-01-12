@@ -39,13 +39,13 @@ const featuredProducts = [
     },
     {
         id: 2,
-        name: 'Crunch',
+        name: 'Shrinkr',
         platform: 'macOS',
         platformIcon: Apple,
         tagline: 'Native media compression',
         description:
             'Compress images, videos, and audio locally with Apple Silicon.',
-        link: '/products/macos/crunch',
+        link: '/products/macos/shrinkr',
         gradient: 'from-blue-500 to-purple-500',
     },
     {

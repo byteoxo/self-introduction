@@ -51,11 +51,11 @@ export default function PrivacyPolicyPage() {
                             className="mb-8"
                         >
                             <Link
-                                href="/products/macos/crunch"
+                                href="/products/macos/Shrinkr"
                                 className="inline-flex items-center gap-2 text-muted transition-colors hover:text-foreground"
                             >
                                 <ArrowLeft className="h-4 w-4" />
-                                <span>Back to Crunch</span>
+                                <span>Back to Shrinkr</span>
                             </Link>
                         </motion.div>
 
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
                             <div className="flex flex-wrap items-center gap-4">
                                 <div className="flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-sm text-blue-400">
                                     <Apple className="h-4 w-4" />
-                                    <span>Crunch for macOS</span>
+                                    <span>Shrinkr for macOS</span>
                                 </div>
                                 <p className="text-muted">
                                     Last updated: {lastUpdated}
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
                                         Privacy by Design
                                     </h2>
                                     <p className="text-muted">
-                                        Crunch is built with privacy at its
+                                        Shrinkr is built with privacy at its
                                         core. All media processing happens
                                         locally on your Mac. Your files never
                                         leave your computer, and we don&apos;t
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                                     This Privacy Policy describes how byteoxo
                                     (&quot;we,&quot; &quot;us,&quot; or
                                     &quot;our&quot;) handles information when
-                                    you use Crunch (&quot;the App&quot;), a
+                                    you use Shrinkr (&quot;the App&quot;), a
                                     media compression application for macOS. We
                                     are committed to protecting your privacy and
                                     being transparent about our data practices.
@@ -143,8 +143,8 @@ export default function PrivacyPolicyPage() {
                                     1.1 Your Files Stay on Your Mac
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    Crunch processes all media files entirely on
-                                    your local machine. This means:
+                                    Shrinkr processes all media files entirely
+                                    on your local machine. This means:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-6">
                                     <li>
@@ -169,8 +169,9 @@ export default function PrivacyPolicyPage() {
                                     1.2 No Cloud Services
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    Unlike many modern apps, Crunch does not use
-                                    cloud services for any core functionality:
+                                    Unlike many modern apps, Shrinkr does not
+                                    use cloud services for any core
+                                    functionality:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2">
                                     <li>No cloud storage integration</li>
@@ -190,7 +191,7 @@ export default function PrivacyPolicyPage() {
                                     2.1 What We Collect
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    To improve Crunch and provide support, we
+                                    To improve Shrinkr and provide support, we
                                     may collect minimal, anonymized information:
                                 </p>
                                 <div className="overflow-x-auto mb-6">
@@ -272,10 +273,10 @@ export default function PrivacyPolicyPage() {
                                 </h3>
                                 <p className="text-muted">
                                     You can disable analytics collection in
-                                    Crunch&apos;s preferences. Crash reports can
-                                    be disabled through macOS System Settings
-                                    &gt; Privacy &amp; Security &gt; Analytics
-                                    &amp; Improvements.
+                                    Shrinkr&apos;s preferences. Crash reports
+                                    can be disabled through macOS System
+                                    Settings &gt; Privacy &amp; Security &gt;
+                                    Analytics &amp; Improvements.
                                 </p>
                             </Section>
 
@@ -289,7 +290,7 @@ export default function PrivacyPolicyPage() {
                                     3.1 Mac App Store
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    If you download Crunch from the Mac App
+                                    If you download Shrinkr from the Mac App
                                     Store, Apple may collect certain information
                                     in accordance with their privacy policy.
                                     This includes:
@@ -310,7 +311,7 @@ export default function PrivacyPolicyPage() {
                                     3.2 Apple Frameworks
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    Crunch uses standard macOS frameworks that
+                                    Shrinkr uses standard macOS frameworks that
                                     may interact with Apple services:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-6">
@@ -330,7 +331,7 @@ export default function PrivacyPolicyPage() {
                                     3.3 No Advertising or Tracking
                                 </h3>
                                 <p className="text-muted">
-                                    Crunch does not include any advertising
+                                    Shrinkr does not include any advertising
                                     SDKs, tracking pixels, or analytics
                                     frameworks that report user behavior to
                                     third parties.
@@ -347,7 +348,7 @@ export default function PrivacyPolicyPage() {
                                     4.1 Control Over Your Data
                                 </h3>
                                 <p className="text-muted mb-3">
-                                    Since Crunch processes files locally, you
+                                    Since Shrinkr processes files locally, you
                                     have complete control:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-6">
@@ -401,7 +402,7 @@ export default function PrivacyPolicyPage() {
                                 </h3>
                                 <p className="text-muted">
                                     We do not sell personal information. Since
-                                    Crunch doesn&apos;t collect personal
+                                    Shrinkr doesn&apos;t collect personal
                                     information from your media files, there is
                                     no personal information to sell, share, or
                                     disclose.
@@ -418,8 +419,8 @@ export default function PrivacyPolicyPage() {
                                     5.1 Local Data
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    All files processed by Crunch remain on your
-                                    Mac:
+                                    All files processed by Shrinkr remain on
+                                    your Mac:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-6">
                                     <li>
@@ -453,18 +454,18 @@ export default function PrivacyPolicyPage() {
                                     5.3 Complete Removal
                                 </h3>
                                 <p className="text-muted">
-                                    To completely remove Crunch and all
+                                    To completely remove Shrinkr and all
                                     associated data from your Mac:
                                 </p>
                                 <ol className="list-decimal pl-6 text-muted space-y-2 mt-2">
-                                    <li>Move Crunch.app to Trash</li>
+                                    <li>Move Shrinkr.app to Trash</li>
                                     <li>
                                         Delete
-                                        ~/Library/Preferences/io.byteoxo.crunch.plist
+                                        ~/Library/Preferences/io.byteoxo.Shrinkr.plist
                                     </li>
                                     <li>
                                         Delete
-                                        ~/Library/Caches/io.byteoxo.crunch (if
+                                        ~/Library/Caches/io.byteoxo.Shrinkr (if
                                         exists)
                                     </li>
                                     <li>Empty Trash</li>
@@ -482,7 +483,7 @@ export default function PrivacyPolicyPage() {
                                 </h3>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-6">
                                     <li>
-                                        Crunch is code-signed and notarized by
+                                        Shrinkr is code-signed and notarized by
                                         Apple
                                     </li>
                                     <li>
@@ -503,7 +504,7 @@ export default function PrivacyPolicyPage() {
                                     6.2 File Access
                                 </h3>
                                 <p className="text-muted mb-4">
-                                    Crunch only accesses files and folders you
+                                    Shrinkr only accesses files and folders you
                                     explicitly grant permission to:
                                 </p>
                                 <ul className="list-disc pl-6 text-muted space-y-2 mb-6">
@@ -524,10 +525,10 @@ export default function PrivacyPolicyPage() {
                                     6.3 Gatekeeper &amp; Notarization
                                 </h3>
                                 <p className="text-muted">
-                                    Crunch distributed through the Mac App Store
-                                    undergoes Apple&apos;s review process and is
-                                    notarized, ensuring the app is free from
-                                    known malware.
+                                    Shrinkr distributed through the Mac App
+                                    Store undergoes Apple&apos;s review process
+                                    and is notarized, ensuring the app is free
+                                    from known malware.
                                 </p>
                             </Section>
 
@@ -552,14 +553,14 @@ export default function PrivacyPolicyPage() {
                                         through the App
                                     </li>
                                     <li>
-                                        Continued use of Crunch indicates
+                                        Continued use of Shrinkr indicates
                                         acceptance of updates
                                     </li>
                                 </ul>
                                 <p className="text-muted">
                                     Our privacy principles—local processing, no
                                     data collection from your files, no cloud
-                                    uploads—are fundamental to Crunch and will
+                                    uploads—are fundamental to Shrinkr and will
                                     not change.
                                 </p>
                             </Section>
@@ -571,7 +572,7 @@ export default function PrivacyPolicyPage() {
                                 gradient="from-pink-500 to-rose-500"
                             >
                                 <p className="text-muted mb-4">
-                                    Crunch is a general-purpose media
+                                    Shrinkr is a general-purpose media
                                     compression tool suitable for all ages.
                                     Since we don&apos;t collect personal
                                     information from users, there are no special
@@ -597,7 +598,7 @@ export default function PrivacyPolicyPage() {
                                         </h2>
                                         <p className="text-muted mb-4">
                                             If you have questions about this
-                                            Privacy Policy or Crunch&apos;s
+                                            Privacy Policy or Shrinkr&apos;s
                                             privacy practices:
                                         </p>
                                         <ul className="text-muted space-y-2">
@@ -613,12 +614,14 @@ export default function PrivacyPolicyPage() {
                                                 </a>
                                             </li>
                                             <li>
-                                                <strong>Crunch Support:</strong>{' '}
+                                                <strong>
+                                                    Shrinkr Support:
+                                                </strong>{' '}
                                                 <a
-                                                    href="mailto:crunch@byteoxo.io"
+                                                    href="mailto:Shrinkr@byteoxo.io"
                                                     className="text-accent hover:underline"
                                                 >
-                                                    crunch@byteoxo.io
+                                                    Shrinkr@byteoxo.io
                                                 </a>
                                             </li>
                                         </ul>
@@ -629,18 +632,18 @@ export default function PrivacyPolicyPage() {
                             {/* Navigation Links */}
                             <div className="mt-12 flex flex-wrap gap-4">
                                 <Link
-                                    href="/products/macos/crunch/terms-of-service"
+                                    href="/products/macos/Shrinkr/terms-of-service"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-6 py-3 font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <FileText className="h-4 w-4" />
                                     <span>Terms of Service</span>
                                 </Link>
                                 <Link
-                                    href="/products/macos/crunch"
+                                    href="/products/macos/Shrinkr"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-6 py-3 font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <ArrowLeft className="h-4 w-4" />
-                                    <span>Back to Crunch</span>
+                                    <span>Back to Shrinkr</span>
                                 </Link>
                             </div>
                         </motion.div>

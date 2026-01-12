@@ -46,11 +46,11 @@ export default function ReturnPolicyPage() {
                             className="mb-8"
                         >
                             <Link
-                                href="/products/macos/crunch"
+                                href="/products/macos/Shrinkr"
                                 className="inline-flex items-center gap-2 text-muted transition-colors hover:text-foreground"
                             >
                                 <ArrowLeft className="h-4 w-4" />
-                                <span>Back to Crunch</span>
+                                <span>Back to Shrinkr</span>
                             </Link>
                         </motion.div>
 
@@ -73,7 +73,7 @@ export default function ReturnPolicyPage() {
                             <div className="flex flex-wrap items-center gap-4">
                                 <div className="flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-sm text-blue-400">
                                     <Apple className="h-4 w-4" />
-                                    <span>Crunch for macOS</span>
+                                    <span>Shrinkr for macOS</span>
                                 </div>
                                 <p className="text-muted">
                                     Last updated: {lastUpdated}
@@ -97,7 +97,7 @@ export default function ReturnPolicyPage() {
                                         App Store Refunds
                                     </h2>
                                     <p className="text-muted">
-                                        Crunch is sold exclusively through the
+                                        Shrinkr is sold exclusively through the
                                         Mac App Store. All transactions,
                                         billing, and refunds are handled
                                         directly by Apple in accordance with
@@ -118,7 +118,7 @@ export default function ReturnPolicyPage() {
                             <section className="mb-12 rounded-2xl border border-card-border bg-card/30 p-6 md:p-8">
                                 <p className="text-muted leading-relaxed">
                                     We want you to be completely satisfied with
-                                    Crunch. However, because we sell our app
+                                    Shrinkr. However, because we sell our app
                                     through the Apple Mac App Store, we do not
                                     have the ability to process refunds
                                     directly. Apple handles all payment
@@ -153,7 +153,7 @@ export default function ReturnPolicyPage() {
                                         },
                                         {
                                             title: 'Sign In',
-                                            desc: 'Log in with the Apple ID used to purchase Crunch.',
+                                            desc: 'Log in with the Apple ID used to purchase Shrinkr.',
                                         },
                                         {
                                             title: 'Select "Request a refund"',
@@ -165,7 +165,7 @@ export default function ReturnPolicyPage() {
                                         },
                                         {
                                             title: 'Submit',
-                                            desc: 'Select "Crunch" from the list of purchases and click "Submit".',
+                                            desc: 'Select "Shrinkr" from the list of purchases and click "Submit".',
                                         },
                                     ].map((step, i) => (
                                         <div
@@ -266,7 +266,7 @@ export default function ReturnPolicyPage() {
                                         test all core compression features with
                                         generous daily limits. We strongly
                                         encourage trying the free version to
-                                        ensure Crunch meets your needs before
+                                        ensure Shrinkr meets your needs before
                                         upgrading to Pro.
                                     </p>
                                 </div>
@@ -323,7 +323,7 @@ export default function ReturnPolicyPage() {
                                 gradient="from-purple-500 to-indigo-500"
                             >
                                 <p className="text-muted mb-4">
-                                    If you have subscribed to Crunch Pro, you
+                                    If you have subscribed to Shrinkr Pro, you
                                     can cancel your subscription at any time
                                     through your Mac's App Store settings.
                                 </p>
@@ -344,7 +344,7 @@ export default function ReturnPolicyPage() {
                                         Scroll to "Manage" and click the link
                                         next to "Subscriptions".
                                     </li>
-                                    <li>Click "Edit" next to Crunch.</li>
+                                    <li>Click "Edit" next to Shrinkr.</li>
                                     <li>Click "Cancel Subscription".</li>
                                 </ol>
                                 <p className="text-sm text-muted italic">
@@ -387,18 +387,18 @@ export default function ReturnPolicyPage() {
                             {/* Navigation Links */}
                             <div className="mt-12 flex flex-wrap gap-4">
                                 <Link
-                                    href="/products/macos/crunch/privacy-policy"
+                                    href="/products/macos/Shrinkr/privacy-policy"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-6 py-3 font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <Shield className="h-4 w-4" />
                                     <span>Privacy Policy</span>
                                 </Link>
                                 <Link
-                                    href="/products/macos/crunch"
+                                    href="/products/macos/Shrinkr"
                                     className="inline-flex items-center gap-2 rounded-full border border-card-border bg-card/50 px-6 py-3 font-medium transition-all hover:border-accent/50 hover:bg-card"
                                 >
                                     <ArrowLeft className="h-4 w-4" />
-                                    <span>Back to Crunch</span>
+                                    <span>Back to Shrinkr</span>
                                 </Link>
                             </div>
                         </motion.div>

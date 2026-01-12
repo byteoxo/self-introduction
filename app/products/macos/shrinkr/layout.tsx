@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Crunch - Powerful Media Compression for Mac | byteoxo',
+    title: 'Shrinkr - Powerful Media Compression for Mac | byteoxo',
     description:
-        'Crunch is a native macOS media compression app. Compress images, videos, and audio files locally with Apple Silicon acceleration. Privacy-first, blazingly fast, batch processing with ZIP output.',
+        'Shrinkr is a native macOS media compression app. Compress images, videos, and audio files locally with Apple Silicon acceleration. Privacy-first, blazingly fast, batch processing with ZIP output.',
     keywords: [
-        'Crunch',
+        'Shrinkr',
         'media compression',
         'macOS',
         'Apple Silicon',
@@ -16,19 +16,19 @@ export const metadata: Metadata = {
         'byteoxo',
     ],
     openGraph: {
-        title: 'Crunch - Powerful Media Compression for Mac',
+        title: 'Shrinkr - Powerful Media Compression for Mac',
         description:
             'Compress images, videos, and audio files locally with Apple Silicon acceleration. Privacy-first and blazingly fast.',
-        url: 'https://byteoxo.dev/products/macos/crunch',
+        url: 'https://byteoxo.dev/products/macos/Shrinkr',
     },
     twitter: {
-        title: 'Crunch - Powerful Media Compression for Mac',
+        title: 'Shrinkr - Powerful Media Compression for Mac',
         description:
             'Compress images, videos, and audio files locally with Apple Silicon acceleration. Privacy-first and blazingly fast.',
     },
 }
 
-export default function CrunchLayout({
+export default function ShrinkrLayout({
     children,
 }: {
     children: React.ReactNode

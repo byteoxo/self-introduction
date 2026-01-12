@@ -50,7 +50,7 @@ const navigationLinks = [
         title: 'Products',
         links: [
             { name: 'AI Hub', href: '/products/android/ai-hub', icon: Play },
-            { name: 'Crunch', href: '/products/macos/crunch', icon: Apple },
+            { name: 'Shrinkr', href: '/products/macos/shrinkr', icon: Apple },
             {
                 name: 'Crunch CLI',
                 href: 'https://github.com/byteoxo/crunch',
@@ -73,13 +73,13 @@ const navigationLinks = [
                 icon: FileText,
             },
             {
-                name: 'Crunch Privacy',
-                href: '/products/macos/crunch/privacy-policy',
+                name: 'Shrinkr Privacy',
+                href: '/products/macos/shrinkr/privacy-policy',
                 icon: FileText,
             },
             {
-                name: 'Crunch Terms',
-                href: '/products/macos/crunch/terms-of-service',
+                name: 'Shrinkr Terms',
+                href: '/products/macos/shrinkr/terms-of-service',
                 icon: FileText,
             },
         ],

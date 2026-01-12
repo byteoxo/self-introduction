@@ -34,9 +34,9 @@ const products = [
     },
     {
         id: 2,
-        name: 'Crunch',
+        name: 'Shrinkr',
         platform: 'macOS',
-        logo: '/products/macos/crunch/crunch.png',
+        logo: '/products/macos/shrinkr/shrinkr.png',
         tagline: 'Native media compression tool',
         description:
             'Compress images, videos, and audio locally. Apple Silicon optimized, privacy-first, no uploads needed.',
@@ -48,7 +48,7 @@ const products = [
         ],
         storeLink: '#',
         storeLinkText: 'Mac App Store',
-        learnMoreLink: '/products/macos/crunch',
+        learnMoreLink: '/products/macos/Shrinkr',
         gradient: 'from-blue-500 to-purple-500',
         bgGradient: 'from-blue-500/10 to-purple-500/10',
         accentColor: 'text-purple-400',

@@ -1,23 +1,23 @@
 import type { Metadata } from 'next'
-import { CrunchPageClient } from './crunch-client'
+import { ShrinkrPageClient } from './shrinkr-client'
 
 export const metadata: Metadata = {
-    title: 'Crunch - Native Media Compression for Mac | byteoxo',
+    title: 'Shrinkr - Native Media Compression for Mac | byteoxo',
     description:
         'Powerful media compression tool for macOS. Compress images, videos, and audio files locally with Apple Silicon optimization. Batch processing, privacy-first, blazingly fast.',
     openGraph: {
-        title: 'Crunch - Native Media Compression for Mac',
+        title: 'Shrinkr - Native Media Compression for Mac',
         description:
             'Compress images, videos, and audio files locally with Apple Silicon optimization. Batch processing, privacy-first, blazingly fast.',
-        url: 'https://byteoxo.dev/products/macos/crunch',
+        url: 'https://byteoxo.dev/products/macos/Shrinkr',
     },
     twitter: {
-        title: 'Crunch - Native Media Compression for Mac',
+        title: 'Shrinkr - Native Media Compression for Mac',
         description:
             'Compress images, videos, and audio files locally with Apple Silicon optimization. Batch processing, privacy-first, blazingly fast.',
     },
 }
 
-export default function CrunchPage() {
-    return <CrunchPageClient />
+export default function ShrinkrPage() {
+    return <ShrinkrPageClient />
 }
