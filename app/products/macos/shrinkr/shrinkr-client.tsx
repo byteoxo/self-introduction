@@ -24,16 +24,9 @@ import {
     Star,
     FileText,
     Folder,
-    Play,
-    Pause,
     Check,
     X,
     ArrowRight,
-    Minimize2,
-    Maximize2,
-    Circle,
-    Users,
-    Crown,
     RefreshCw,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -172,8 +165,8 @@ const pricingPlans = [
         subtitle: 'Professional',
         description: 'Built for creators, designers, and power users',
         price: '$6.99 / month',
-        priceYearly: '$55 / year',
-        savePercent: '35',
+        priceYearly: '$49.99 / year',
+        savePercent: '40',
         features: [
             { text: 'Unlimited files', included: true, highlight: true },
             { text: 'Unlimited file size', included: true, highlight: true },
@@ -194,30 +187,6 @@ const pricingPlans = [
         ],
         gradient: 'from-purple-500 to-pink-500',
         recommended: true,
-    },
-    {
-        name: 'Team',
-        subtitle: 'Collaborate',
-        description: 'Designed for studios, agencies, and growing teams',
-        price: '$6 / seat / month',
-        priceYearly: '$50 / seat / year',
-        savePercent: '40',
-        comingSoon: true,
-        features: [
-            { text: 'Everything in Pro', included: true },
-            {
-                text: '5+ seats with flexible member management',
-                included: true,
-                highlight: true,
-            },
-            {
-                text: 'Dedicated account manager',
-                included: true,
-                highlight: true,
-            },
-        ],
-        gradient: 'from-orange-500 to-red-500',
-        recommended: false,
     },
 ]
 
@@ -719,7 +688,7 @@ export function ShrinkrPageClient() {
                             </p>
                         </motion.div>
 
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
                             {pricingPlans.map((plan, index) => (
                                 <PricingCard
                                     key={plan.name}
@@ -728,6 +697,19 @@ export function ShrinkrPageClient() {
                                 />
                             ))}
                         </div>
+
+                        {/* Regional Pricing Note */}
+                        <motion.p
+                            className="mt-8 text-center text-sm text-muted"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                            * Prices shown are approximate and may vary by
+                            region. Actual prices may differ — please check the
+                            App Store for details.
+                        </motion.p>
                     </div>
                 </section>
 
@@ -1542,15 +1524,6 @@ function PricingCard({
                 </div>
             )}
 
-            {/* Coming Soon badge */}
-            {'comingSoon' in plan && plan.comingSoon && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-3 py-1 text-xs font-semibold text-white">
-                        Coming Soon
-                    </span>
-                </div>
-            )}
-
             {/* Header */}
             <div className="mb-6 pt-2">
                 <div className="flex items-center gap-2 mb-1">
@@ -1606,29 +1579,19 @@ function PricingCard({
 
             {/* CTA Button */}
             <div className="mt-6">
-                {'comingSoon' in plan && plan.comingSoon ? (
-                    <button
-                        type="button"
-                        disabled
-                        className="w-full rounded-full border border-card-border bg-card/50 px-4 py-2.5 text-sm font-medium text-muted cursor-not-allowed"
-                    >
-                        Coming Soon
-                    </button>
-                ) : (
-                    <motion.button
-                        type="button"
-                        className={cn(
-                            'w-full rounded-full px-4 py-2.5 text-sm font-medium transition-all',
-                            plan.recommended
-                                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/25'
-                                : 'border border-card-border bg-card/50 hover:border-accent/50 hover:bg-card'
-                        )}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                    >
-                        {plan.price === 'Free' ? 'Get Started' : 'Subscribe'}
-                    </motion.button>
-                )}
+                <motion.button
+                    type="button"
+                    className={cn(
+                        'w-full rounded-full px-4 py-2.5 text-sm font-medium transition-all',
+                        plan.recommended
+                            ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/25'
+                            : 'border border-card-border bg-card/50 hover:border-accent/50 hover:bg-card'
+                    )}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                >
+                    {plan.price === 'Free' ? 'Get Started' : 'Subscribe'}
+                </motion.button>
             </div>
         </motion.div>
     )
