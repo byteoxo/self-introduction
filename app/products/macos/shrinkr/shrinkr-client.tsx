@@ -142,11 +142,11 @@ const pricingPlans = [
         name: 'Plus',
         subtitle: 'Personal',
         description: 'Ideal for individuals with regular compression needs',
-        price: '$3 / month',
-        priceYearly: '$30 / year',
+        price: '$1.99 / month',
+        priceYearly: '$19.99 / year',
         savePercent: '17',
         features: [
-            { text: '6 files per day', included: true, highlight: true },
+            { text: '8 files per day', included: true, highlight: true },
             {
                 text: 'Supports all image / video / audio formats',
                 included: true,
@@ -164,8 +164,8 @@ const pricingPlans = [
         name: 'Pro',
         subtitle: 'Professional',
         description: 'Built for creators, designers, and power users',
-        price: '$6.99 / month',
-        priceYearly: '$49.99 / year',
+        price: '$3.99 / month',
+        priceYearly: '$24.99 / year',
         savePercent: '40',
         features: [
             { text: 'Unlimited files', included: true, highlight: true },
