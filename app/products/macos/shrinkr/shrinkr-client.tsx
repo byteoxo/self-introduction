@@ -288,7 +288,7 @@ export function ShrinkrPageClient() {
                                 {/* CTA Buttons */}
                                 <div className="flex flex-wrap gap-4">
                                     <motion.a
-                                        href="https://apps.apple.com/app"
+                                        href="https://apps.apple.com/cn/app/shrinkr/id6756874298?l=en-GB&mt=12"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-medium text-white transition-all hover:shadow-lg hover:shadow-blue-500/25"
@@ -751,7 +751,7 @@ export function ShrinkrPageClient() {
                                 </p>
 
                                 <motion.a
-                                    href="https://apps.apple.com/app"
+                                    href="https://apps.apple.com/cn/app/shrinkr/id6756874298?l=en-GB&mt=12"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-4 text-lg font-medium text-white transition-all hover:shadow-xl hover:shadow-blue-500/30"

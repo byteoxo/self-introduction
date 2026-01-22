@@ -56,7 +56,7 @@ const products = [
             'Images & Videos',
             'Privacy-First',
         ],
-        link: 'https://apps.apple.com/app',
+        link: 'https://apps.apple.com/cn/app/shrinkr/id6756874298?l=en-GB&mt=12',
         linkText: 'Mac App Store',
         gradient: 'from-blue-500 to-purple-500',
         category: 'Desktop',
