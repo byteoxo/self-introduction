@@ -1,5 +1,5 @@
 export default function sitemap() {
-    const baseUrl = 'https://byteoxo.com'
+    const baseUrl = 'https://byteoxo.io'
 
     const routes = [
         {
